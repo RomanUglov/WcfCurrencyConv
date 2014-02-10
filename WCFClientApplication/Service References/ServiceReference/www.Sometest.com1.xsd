@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="www.Sometest.com" elementFormDefault="qualified" targetNamespace="www.Sometest.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="GetRateByDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dateFrom" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dateTo" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="currencyCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRateByDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetRateByDateResult" nillable="true" type="q1:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Convert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="currA" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="currB" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="date" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="value" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConvertResult" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExportToCSV">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dateFrom" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dateTo" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="currencyCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExportToCSVResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExportToCSVResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
